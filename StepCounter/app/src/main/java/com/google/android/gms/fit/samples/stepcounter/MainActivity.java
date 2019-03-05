@@ -18,8 +18,10 @@ package com.google.android.gms.fit.samples.stepcounter;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
   public static final String TAG = "StepCounter";
   private static final int REQUEST_OAUTH_REQUEST_CODE = 0x1001;
 
+  @RequiresApi(api = Build.VERSION_CODES.M)
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -145,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
   }
 
   /** Initializes a custom log class that outputs both to in-app targets and logcat. */
+  @RequiresApi(api = Build.VERSION_CODES.M)
   private void initializeLogging() {
     // Wraps Android's native log framework.
     LogWrapper logWrapper = new LogWrapper();
